@@ -1,0 +1,30 @@
+<!-- acheter_vendre.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Acheter/Vendre</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/styles.css' %}">
+</head>
+<body class="gradient-bgav">
+
+<h1 class = "headav">Acheter/Vendre {{ actif.nom }}</h1>
+
+<form method="post" action="">
+    {% csrf_token %}
+    <label for="type_transaction">Type de Transaction:</label>
+    <select name="type_transaction" id="type_transaction">
+        <option value="Achat">Achat</option>
+        <option value="Vente">Vente</option>
+    </select>
+    <br>
+    <label for="quantite">Quantité:</label>
+    <input type="number" name="quantite" id="quantite" required>
+    <br>
+    <input type="submit" value="Valider">
+</form>
+
+<a class="btn-acheter-vendre" href="{% url 'liste_actifs' %}">Retour à la liste des actifs</a>
+
+</body>
+</html>

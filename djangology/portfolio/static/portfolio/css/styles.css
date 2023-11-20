@@ -1,0 +1,63 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    color: #e6e6e6;
+    
+}
+
+
+h1 {
+    color: #333; /* Couleur du texte pour les titres h1 */
+}
+
+ul li:not(:last-child) {
+    margin-bottom: 5px;  
+}
+
+
+.btn-acheter-vendre {
+    background-color: #400080; 
+    color: white; 
+    padding: 3px 5px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    display: inline-block; 
+}
+
+.btn-acheter-vendre:hover {
+    background-color: #330066; /* Changement de couleur au survol */
+}
+
+.actif-item {
+    margin-bottom: 10px;
+    margin-right: 0px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #0d001a;
+}
+
+#argent-disponible {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10 px;
+    border: 1px solid #ccc;
+    background-color: #0d001a;
+    border-radius: 5px;
+}
+
+body.gradient-bg {
+    /* Dégradé de couleur de fond */
+    background: linear-gradient(to top, #000000, #1a0033);
+}
+
+body.gradient-bgav {
+    /* Dégradé de couleur de fond */
+    background-color:  #0d001a;
+}
+
+.headav {
+    color:  #e6e6e6;
+}

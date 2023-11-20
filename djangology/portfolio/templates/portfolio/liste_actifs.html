@@ -1,0 +1,41 @@
+<!-- liste_actifs.html -->
+
+{% load static %}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bienvenu sur votre portefeuille</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/styles.css' %}">
+</head>
+<body class="gradient-bg">
+<h2>Mon Portefeuille</h2>
+	<div id="argent-disponible">
+    		<p>Argent disponible : {{ portefeuille.argent_disponible }} €</p>
+	</div>
+
+<h3>Liste des Actifs</h3>
+
+<ul>
+    {% for actif in actifs %}
+         <li class="actif-item">
+            {{ actif.nom }} - Prix : {{ actif.prix }} - Quantité détenue : {{ actif.quantite_disponible }}
+            <a class="btn-acheter-vendre" href="{% url 'acheter_vendre' actif.id %}">Passer un ordre</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<h4>Historique des Transactions</h4>
+<ul>
+    {% for transaction in transactions %}
+        <li>
+            {{ transaction.actif.nom }} - {{ transaction.type_transaction }} de {{ transaction.quantite }} le {{ transaction.date_transaction }}
+        </li>
+    {% endfor %}
+</ul>
+<h5>Ce site a été réalisé par Eliot VU pour le projet Web du cours Data Driven Programming de l'Ecole Centrale Marseille </h5>
+</body>
+</html>
